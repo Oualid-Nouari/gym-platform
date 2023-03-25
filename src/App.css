@@ -1,38 +1,591 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Golos Text', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+    background-color: #101314;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+    width: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+::-webkit-scrollbar-thumb {
+    background-color: #9ad813;
+    border-radius: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+::-webkit-scrollbar-track {
+    background-color: #101314;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+    background-color: #101314;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+    padding: 10px 0;
+}
+
+.fa-circle-xmark {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+a {
+    color: white;
+    transition: .1s;
+}
+
+header ul {
+    display: flex;
+    margin-right: 40px;
+    align-items: center;
+}
+
+header ul li {
+    margin-left: 25px;
+}
+
+header ul li a i {
+    margin-right: 8px;
+}
+
+header ul li button {
+    padding: 10px 13px;
+    border: none;
+    outline: none;
+    background-color: #9ad813;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+header ul li a:hover {
+    color: #9ad813;
+}
+
+header ul li button:hover {
+    background-color: #9ad8133a;
+    border: 1px solid #9ad813;
+    color: white;
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section .image {
+    background: url('./imgs/hero-img.jpg');
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 69%;
+  z-index: -3;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.hero-section .hero-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.651);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+main {
+    height: 100vh;
+    width: 85%;
+    margin: auto;
+}
+
+main .main-left-side {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main .main-left-side .line1 {
+    font-size: 50px;
+    font-weight: 800;
+    position: relative;
+    color: transparent;
+    padding: 0;
+    -webkit-text-stroke: 2px #414D49;
+    letter-spacing: 1px;
+}
+
+main .main-left-side .line2 {
+    font-size: 80px;
+    font-weight: 800;
+    color: white;
+}
+
+main .main-left-side p {
+    width: 80%;
+    color: #535c59;
+}
+
+main .main-left-side button {
+    width: fit-content;
+    padding: 15px 23px;
+    margin-top: 20px;
+    border: none;
+    background-color: #9ad813;
+    outline: none;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: .3s;
+}
+main .main-left-side button:hover {
+    background-color: #9ad8133a;
+    border: 1px solid #9ad813;
+    color: white;
+}
+
+main .main-right-side {
+    width: 2200px;
+    height: 2520px;
+    background-color: #9ad813;
+    position: absolute;
+    right: -1650px;
+    top: 0;
+    transform: rotate(-60deg);
+    padding: 200px;
+}
+
+main .body-builder {
+    height: 80vh;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.bp-modal {
+    background-color: white;
+    width: 580px;
+    height: 80vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bp-modal h1 {
+    margin-top: 10px;
+} 
+
+.bp-modal i {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.b-parts {
+    margin: 15px 7px;
+    height: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.b-parts::-webkit-scrollbar {
+    width: 0;
+}
+
+.b-parts span {
+    width: 200px;
+    color: black !important;
+}
+
+.b-parts article {
+    background-color: #ffffff;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 4px 4px 10px #c5c2c2;
+}
+
+.b-parts article:hover {
+    border: .2px solid black;
+}
+
+.b-parts .bp-img {
+    height: 100px;
+    margin-bottom: 12px;
+}
+
+.exercices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.exercices-header {
+    color: white;
+    background-color:#0b82c7;
+    padding: 20px 40px !important;
+    width: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    position: sticky;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.toggle-btn {
+    width: 50px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #EAEAEA;
+    margin: 0 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn .toggle-circle {
+    height: 18px;
+    width: 17px;
+    border-radius: 50%;
+    position: absolute;
+    left: 1px;
+    top: 7%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+}
+
+.exercices .exercice {
+    padding: 20px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 10px;
+    width: 500px;
+}
+
+.exercices img {
+    width: 300px;
+    margin: 4px 40px;
+    border-radius: 10px;
+}
+
+.title {
+    color: white;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.pricingSection {
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    height: 90vh;
+
+}
+
+.pricingSection div {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 13px;
+    color: white;
+    margin: 10px auto;
+}
+
+.pricingSection div i {
+    margin-right: 7px;
+}
+
+.pricingSection div ul li {
+    margin-top: 5px;
+}
+
+.pricingSection div.freeTrial {
+    background-image: linear-gradient(#FE2D25, #f5742f);
+    padding: 20px 0;
+}
+
+.pricingSection div.bigOne, .pricingSection div.custom {
+    border: 1px solid #1c2122;
+    padding: 20px 0;
+}
+
+.pricingSection div.bigOne h1.price {
+    border-top: 1px solid #1c2122;
+    border-bottom: 1px solid #1c2122;
+    width: 80%;
+    text-align: center;
+}
+
+.pricingSection div.bigOne
+
+.pricingSection div h3, .pricingSection div p, .pricingSection div .price {
+    padding: 15px 0;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.pricingSection div .price {
+    font-size: 40px;
+}
+
+.pricingSection div button {
+    margin-top: 45px;
+    padding: 15px 35px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.ex-container {
+    background-color: white;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 100;
+}
+
+.ex-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    z-index: 20;
+    width: 400px;
+}
+
+.contact-us form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.contact-us form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.contact-us form div input {
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    width: 300px;
+    background-color: rgba(235, 234, 234, 0.829);
+    border: .2px solid rgb(221, 221, 221);
+}
+
+.contact-us form div label {
+    margin-bottom: 5px;
+}
+
+.contact-us form div button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact-us form div button:hover {
+    background-color: rgba(235, 234, 234, 0.829);
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.contact-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 19;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1250px) {
+    main .main-left-side .line1 {
+        font-size: 30px;
+    }
+    main .main-left-side .line2 {
+        font-size: 50px;
+    }
+    
+    main .main-left-side p {
+        width: 60%;
+    }
+}
+
+@media (max-width: 991px) {
+    .main-right-side, .body-builder {
+        display: none;
+    } 
+    main {
+        width: 100%;
+    }
+    main .main-left-side {
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    main .main-left-side p {
+        text-align: center;
+    }
+    .hero-section .image {
+        display: block;
+    }
+    header {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    header ul li a span, button span {
+        display: none;
+    }
+    header ul li a i, button i {
+        color: white;
+    }
+    header ul li button {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+    }
+    header {
+        width: 100%;
+    }
+    header img {
+        width: 130px;
+    }
+    .bp-modal {
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+    }
+    .exercices-header {
+        width: 100%;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 22px;
+    }
+    .exercices .exercice {
+        width: 100%;
+    }
+    .ex-container {
+        padding-top: 0;
+    }
+    .fa-circle-xmark {
+        font-size: 20px;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    main .main-left-side .line1 {
+        font-size: 25px;
+    }
+    main .main-left-side .line2 {
+        font-size: 35px;
+    }
+    .contact-us {
+        width: 100%;
+        height: 100%;
+    }
+    .contact-us form {
+        background-color: red;
+        justify-content: start;
+        padding-top: 30px;
+    }
+    .contact-us form input {
+        width: 80%;
+    }
 }

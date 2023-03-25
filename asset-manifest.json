@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/gym-platform/static/css/main.faf52921.css",
+    "main.js": "/gym-platform/static/js/main.bef99858.js",
+    "static/media/leg.png": "/gym-platform/static/media/leg.c4015ebc3b427c75d032.png",
+    "static/media/hero-img.jpg": "/gym-platform/static/media/hero-img.d786ca36230715e84705.jpg",
+    "static/media/back.png": "/gym-platform/static/media/back.5fd44658a34d847b8b99.png",
+    "static/media/neck.png": "/gym-platform/static/media/neck.fd195e66cb42365ad032.png",
+    "static/media/abs.png": "/gym-platform/static/media/abs.2b311adc101900839828.png",
+    "static/media/chest.png": "/gym-platform/static/media/chest.8839728cb8aabb6b64ec.png",
+    "static/media/body-builder.png": "/gym-platform/static/media/body-builder.b3aae5db91f9f4445ad7.png",
+    "static/media/right-arm.png": "/gym-platform/static/media/right-arm.80e96ccf1d707f347352.png",
+    "static/media/shoulders.png": "/gym-platform/static/media/shoulders.29b05f2ea4ab11ac2f82.png",
+    "static/media/gim_logo.png": "/gym-platform/static/media/gim_logo.5f88aa0c75c51958e721.png",
+    "static/media/left-arm.png": "/gym-platform/static/media/left-arm.9598330f84f54a3b5271.png",
+    "static/media/cardio.png": "/gym-platform/static/media/cardio.84afbbcc25ce26a1feb2.png",
+    "index.html": "/gym-platform/index.html",
+    "main.faf52921.css.map": "/gym-platform/static/css/main.faf52921.css.map",
+    "main.bef99858.js.map": "/gym-platform/static/js/main.bef99858.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.faf52921.css",
+    "static/js/main.bef99858.js"
+  ]
+}
